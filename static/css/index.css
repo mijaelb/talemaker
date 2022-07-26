@@ -2,7 +2,6 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
-
 .footer .icon-link {
     font-size: 25px;
     color: #000;
@@ -20,7 +19,7 @@ body {
 
 .teaser .hero-body {
   padding-top: 0;
-  padding-bottom: 3rem;
+  padding-bottom: 0rem;
 }
 
 .teaser {
@@ -154,4 +153,19 @@ body {
 }
 #interpolation-image-wrapper img {
   border-radius: 5px;
+}
+
+.publication-author-block .hero-body {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+
+.publication-header .hero-body {
+  padding-top: 3rem;
+  padding-bottom: 0rem;
+}
+
+.publication-author-block .hero-body {
+  padding-top: 1rem;
+  padding-bottom: 0rem;
 }
