@@ -113,12 +113,11 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">Delft University of Technology</span>
-            <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
+
               <span class="link-block">
                 <a href="https://mijaelbueno.wixsite.com/talemaker"
                    class="external-link button is-normal is-rounded is-dark">
@@ -128,6 +127,7 @@
                   <span>Game</span>
                 </a>
               </span>
+
               <span class="link-block">
                 <a href="https://mijaelb.github.io/talemaker/"
                    class="external-link button is-normal is-rounded is-dark">
@@ -137,17 +137,17 @@
                   <span>Main Paper</span>
                 </a>
               </span>
-              
+
               <span class="link-block">
                 <a href="https://mijaelb.github.io/talemaker/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>DB Paper</span>
+                  <span>Database Paper</span>
                 </a>
               </span>
-              <!-- Video Link. -->
+
               <span class="link-block">
                 <a href="https://mijaelb.github.io/talemaker/"
                    class="external-link button is-normal is-rounded is-dark">
@@ -157,6 +157,7 @@
                   <span>Video</span>
                 </a>
               </span>
+
               <!-- Code Link. -->
               <!-- <span class="link-block">
                 <a href="https://github.com/google/nerfies"
@@ -279,6 +280,48 @@
            alt="TaleMaker Piles"/>
       </div>
     </div>
+    
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Game Design</h2>
+        <div class="content has-text-justified">
+          <p>
+          <span class="dnerf">TaleMaker</span> features both competitive and collaborative elements, designed to provide a 
+          playful experience while co-creating stories.
+          In each turn, each player collects tokens and uses them to compose a sentence 
+          that is compelling enough to convince other players that it belongs in the story.
+          Then, all sentences are submitted for a voting round, where the most popular sentence 
+          is appended to the story and its author is rewarded.
+          In most steps, players are under time pressure, to keep the tempo, 
+          add to the competitive gameplay, and avoid long waiting times.
+          The game concludes when the majority of players decide to end the story, and its title is then chosen.
+          </p>
+          <p>
+          <span class="dnerf">TaleMaker</span> is played online on a computer or a mobile device.
+          In order to play, players need to create a game room which can accommodate two to eight players. 
+          No limitations exist as to whether people choose to play co-located or remotely. 
+          Moreover, players will always be able to join and leave the room at any time, although the room 
+          remains open until the story is completed or after a prudent period of idle time has passed.
+          Any player may join a public game room during an ongoing story.
+          This facilitates the flow of new ideas into the story.
+          In addition, one can also create a private game room, accessible only with a secret code.
+          </p>
+          <p>
+          The core game loop of <span class="dnerf">TaleMaker</span> consists of 8 basic phases: 
+          (1) creating a story prompt, (2) selecting piles (categories) of tokens (words), 
+          (3) collecting and/or discarding tokens, (4) composing a sentence, 
+          (5) submitting and voting for the winner sentence, (6) receiving rewards and rankings, 
+          (7) voting whether the story should end, change location or continue, and finally 
+          (8) writing and voting for a title.
+          </p>
+          <div class="column is-centered has-text-centered">
+            <img src="./static/images/gameloop.png" alt="TaleMaker Core Game Loop"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <!--/ Abstract. -->
 
     <!-- Paper video. -->
@@ -291,18 +334,8 @@
         </div>
       </div>
     </div> -->
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Game Loop</h2>
-        <div class="column content">
-          <img src="./static/images/gameloop.png" alt="TaleMaker Core Game Loop"/>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
-<!-- 
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -311,37 +344,139 @@
 
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
+          <h2 class="title is-4">1. Story Prompt</h2>
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+          A player is randomly selected to create two new characters and a location. 
+          Then, players have to develop the story centered on these characters and location. 
           </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
+          <img src="./static/images/prompt.png" alt="TaleMaker story prompt phase"/>
         </div>
       </div>
 
       <div class="column">
-        <h2 class="title is-3">Matting</h2>
+        <h3 class="title is-4">2. Pile Selection</h3>
         <div class="columns is-centered">
           <div class="column content">
             <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
+            Players begin their turn by selecting three piles (categories) of tokens (words), 
+            a choice that might be influenced by their view on the current story.
             </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
+            <img src="./static/images/piles.png" alt="TaleMaker pile selection phase"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <h3 class="title is-4">3. Token Collection</h3>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              A <i>hand generator</i> determines the tokens that will be <i>served</i> to each player.
+              Yet, each player must decide which tokens to keep 
+              in their <i>collected hand</i>, and which owned tokens to discard.
+            </p>
+            <img src="./static/images/tokens.png" alt="TaleMaker pile selection phase"/>
           </div>
 
         </div>
       </div>
+
+
+      
+    </div>
+    
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered">
+  
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-4">4. Sentence Composition</h2>
+            <p>
+            In this phase, each player composes a sentence with their collected tokens (words), 
+            as their creative contribution to advance the story. </p>
+            <img src="./static/images/sentence.png" alt="TaleMaker sentence composition phase"/>
+          </div>
+        </div>
+  
+        <div class="column">
+          <h3 class="title is-4">5. Sentence Voting</h3>
+          <div class="columns is-centered">
+            <div class="column content">
+              <p>
+              In this phase, players anonymously vote for other submitted sentences; 
+              the sentence with most votes is appended to the story and its author is rewarded.
+              </p>
+              <img src="./static/images/vote.png" alt="TaleMaker sentence voting phase"/>
+            </div>
+          </div>
+        </div>
+  
+        <div class="column">
+          <h3 class="title is-4">6. Rewards and Rankings</h3>
+          <div class="columns is-centered">
+            <div class="column content">
+              <p>
+              In this phase, players receive gold for each vote they received, 
+              and a diamond if their sentence was selected to be part of the story.
+              </p>
+              <img src="./static/images/rewards.png" alt="TaleMaker rewards phase"/>
+            </div>
+  
+          </div>
+        </div>
+  
+  
+        
+      </div>
     </div>
 
-    <div class="columns is-centered">
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered">
+  
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-4">7. Transition Voting</h2>
+            <p>
+            After a certain number of sentences within a given location, 
+            players are asked whether they wish to change location (create a new story prompt) or 
+            end the story. 
+            </p>
+            <img src="./static/images/transition.png" alt="TaleMaker transition voting phase"/>
+          </div>
+        </div>
+  
+        <div class="column">
+          <h3 class="title is-4">8. Story Title</h3>
+          <div class="columns is-centered">
+            <div class="column content">
+              <p>
+                Each player reads the story and proposes a title for it. 
+                Once players have their titles ready, they submit them to a last voting round, 
+                where the winning title will be displayed above the story.
+              </p>
+              <img src="./static/images/title.png" alt="TaleMaker story title phase"/>
+            </div>
+          </div>
+        </div>
+  
+        <div class="column">
+          <h3 class="title is-4">Game End</h3>
+          <div class="columns is-centered">
+            <div class="column content">
+              <p>
+               The game ends after choosing a title, players can read the final story if they wish.
+               Fortunately, in <span class="dnerf">TaleMaker</span> stories are not forgotten, and every story is stored in a 
+               database of stories.
+              </p>
+              <img src="./static/images/story.png" alt="TaleMaker story phase"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Animation</h2>
 
@@ -397,9 +532,9 @@
         </div>
 
       </div>
-    </div>
+    </div> -->
 
-    <div class="columns is-centered">
+    <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
 
@@ -422,10 +557,10 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
 
   </div>
-</section> -->
+</section>
 
 
 <section class="section" id="BibTeX">

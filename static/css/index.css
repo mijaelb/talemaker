@@ -2,6 +2,8 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+h3 {font-size: 60%; line-height:60%;}
+
 .footer .icon-link {
     font-size: 25px;
     color: #000;
