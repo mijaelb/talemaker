@@ -1,14 +1,14 @@
-# Nerfies
+# TaleMaker
 
-This is the repository that contains source code for the [Nerfies website](https://nerfies.github.io).
+This is a forked repository from [Nerfies website](https://nerfies.github.io) which contains source code for the [TaleMaker website](https://mijaelb.github.io/talemaker/).
 
-If you find Nerfies useful for your work please cite:
+If you find TaleMaker inspiring for your work please cite:
 ```
-@article{park2021nerfies
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+@inproceedings{bueno2022talemaker,
+  title={Mixed-initiative story co-creation with TaleMaker},
+  author={Bueno P{\'{e}}rez, Mijael R. and Bidarra, Rafael},
+  booktitle={17th International Conference on the Foundations of Digital Games},
+  year={2022}
 }
 ```
 
