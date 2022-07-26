@@ -1,6 +1,6 @@
 # TaleMaker
 
-This is a forked repository from [Nerfies website](https://nerfies.github.io) which contains source code for the [TaleMaker website](https://mijaelb.github.io/talemaker/).
+This is a forked repository from [Nerfies website](https://nerfies.github.io) which contains source code used for the [TaleMaker website](https://mijaelb.github.io/talemaker/).
 
 If you find TaleMaker inspiring for your work please cite:
 ```
