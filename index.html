@@ -22,15 +22,13 @@
     gtag('config', 'G-PYVRSFMDRL');
   </script> -->
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-divider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
 
 
@@ -104,10 +102,10 @@
           <h1 class="title is-1 publication-title">Mixed-initiative story co-creation with TaleMaker</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://graphics.tudelft.nl/mijael-bueno-perez/">Mijael R. Bueno Pérez</a>,
+              <a href="https://graphics.tudelft.nl/mijael-bueno-perez/">Mijael R. Bueno Pérez</a> and 
             </span>
             <span class="author-block">
-              <a href="https://graphics.tudelft.nl/publications-of-rafael-bidarra/">Rafael Bidarra</a>,
+              <a href="https://graphics.tudelft.nl/publications-of-rafael-bidarra/">Rafael Bidarra</a>
             </span>
           </div>
 
@@ -266,6 +264,7 @@
           In addition, a first analysis of the collected tokens confirms that players mostly collected story-related tokens, 
           rather than those randomly offered.
           </p>
+
         </div>
       </div>
     </div>
@@ -482,6 +481,73 @@
         </div>
       </div>
     </div>
+
+    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <img src="./static/images/pilesfall.png" 
+           class="interpolation-image"
+           style="max-width:200px;width:100%;display:block;margin-left:auto;margin-right:auto;" 
+           alt="TaleMaker Piles Falling"/>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Hand Generation</h2>
+        <div class="content has-text-justified">
+          <p>
+          The main goal of the hand generation method is to strike a balance between supporting 
+          creativity among players and maintaining the competitive nature of the game. 
+          For this, in each turn, each player receives a collection of tokens (the served hand) 
+          from which they will retain a subset (the collected hand), to be used when composing a sentence.
+          Tokens in the served hand are sampled from five distinct <i>bags of ranked tokens</i>, each of 
+          which is designed to promote players' creativity and story quality in different ways. 
+          These bags hold an ordered set of tokens that are ranked based on relevance or 
+          relatedness to different aspects of the story and the game.
+          The purpose of each bag is summarized as follows:
+          </p>
+          <ul>
+            <li><i>Related Bag</i>: 
+            consists of tokens, ranked by the degree to which they are related to other tokens in the story. 
+            This bag allows players to keep the context of the story consistent. 
+            For example, an <i>island</i> is typically associated to tokens such as 
+            <i>coconut</i>, <i>swim</i>, <i>sand</i>, <i>shipwreck</i>, etc.</li>
+
+            <li><i>History Bag</i>: 
+            consists of only the tokens previously found in the story. 
+            This bag enables players to stay on topic.
+             The story might contain objects of narrative importance, 
+             for example, a <i>treasure map</i>; therefore, it is convenient to offer the token again, 
+             so that players can further develop the story using it (e.g. what happens to the treasure map?).
+            </li>
+
+            <li><i>Player Bag</i>:
+            includes tokens ranked according to their predicted relevance to each individual player. 
+            This bag is intended to support players' creativity and planning.
+            For instance, a player planning sentences in the context of a love story, 
+            might collect tokens such as <i>love</i> and <i>kiss</i>; that player might then wish to 
+            receive other relevant tokens, such as <i>hug</i>, <i>gift</i>, <i>date</i>, etc.
+             
+            </li>
+
+            <li><i>Group Bag</i>: 
+            includes tokens ranked according to their predicted relevance to the whole group. 
+            With this bag, players are encouraged to consider the previous contributions of others. 
+            For example, former sentences that did not get approved, 
+            might still contain tokens that are relevant to the present part of the story.
+            </li>
+
+            <li><i>Random Bag</i>:
+            includes all possible tokens, sampled in a random manner. 
+            This bag aims to stimulate players to think creatively about seemingly unrelated tokens, 
+            possibly coming up with new associations or story directions.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
     <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Animation</h2>
